@@ -1,0 +1,4 @@
+//This root file pulls in Bootstrap and our overrides for it. 
+@import "_yeti-variables.scss";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "_yeti.scss";

@@ -1,0 +1,16 @@
+@keyframes test {
+    0% {
+        opacity: 0;
+        //background-color: red;
+    }
+
+    100% {
+        opacity: 1;
+        background-color:transparent;
+    }
+}
+
+body {
+    animation: test 0.5s ease-in-out;
+    //background-color: gray;
+}

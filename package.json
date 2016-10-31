@@ -1,0 +1,11 @@
+{
+  "name": "heroic-gulp",
+  "version": "1.0.0",
+  "description": "A simple, reusable approach to managing HTML, JS, and CSS with gulp.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Honeycutt",
+  "license": "MIT"
+}

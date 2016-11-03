@@ -1,6 +1,11 @@
 # heroic-gulp-poc
 A starting point/proof of concept of a streamlined, reusable gulp v4 setup.  The goal is for this to be usable across web, Cordova, etc. 
 
+#Getting Started
+Make sure you have a recent version of gulp-cli installed.
+Run 'npm i' to install everything.
+Run 'gulp buildAndServe watch' to spin up the sample web page, hosted by Browsersync with a watch on the app folder. 
+
 # What?
 A gulp setup that follows my typical project conventions, and that can perform just about everything I care about, sans a few nice-to-haves that I may add:
 * SASS with autoprefix

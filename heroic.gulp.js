@@ -14,7 +14,8 @@ const angularTemplatecache = require('gulp-angular-templatecache');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
 
-const module = module || {};
+var module = module || {};
+
 module.exports = function() {
     var gulpHero = {
         runScssFor,
@@ -55,9 +56,9 @@ module.exports = function() {
             port: config.port
         };
 
-        if (config.appRoot) config.server = config.appRoot;
+        if (config.appRoot) bsConfig.server = config.appRoot;
 
-        if (config.proxy) config.proxy = config.proxy;
+        if (config.proxy) bsConfig.proxy = config.proxy;
 
         bs.init(bsConfig);
 

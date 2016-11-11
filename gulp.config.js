@@ -1,4 +1,5 @@
-const module = module || {};
+'use strict';
+var module = module || {};
 module.exports = function() {
     const destinationBaseDir = 'www';
     const modulesRoot = 'node_modules';

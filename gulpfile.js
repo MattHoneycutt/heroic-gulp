@@ -38,19 +38,19 @@ function htmlTemplates() {
 }
 exports.htmlTemplates = htmlTemplates;
 
+function staticAssets() {
+    return gulpHero.copyStaticAssets(config.staticAssets);
+}
+exports.staticAssets = staticAssets;
+
 function watch() {
     //TODO: I'd like to encapsulate this, but I'm not sure what the best way to do that would be. 
     gulp.watch(config.appScss.srcGlob, gulp.series(cssApp)).on('error', gulpHero.watchFailed('cssApp'));
     gulp.watch(config.appJs.srcGlob, gulp.series(jsApp)).on('error', gulpHero.watchFailed('jsApp'));
     gulp.watch(config.appHtml.srcGlob, gulp.series(htmlTemplates)).on('error', gulpHero.watchFailed('htmlTemplates'));
+    gulp.watch(config.staticAssets.srcGlob, gulp.series(staticAssets)).on('error', gulpHero.watchFailed('staticAssets'));
 }
 exports.watch = watch;
-
-function copyIndex() {
-    return gulp.src(config.appRoot + '/index.html')
-                .pipe(gulp.dest(config.destinationBaseDir));
-}
-exports.copyIndex = copyIndex;
 
 function revJs() {
     return gulpHero.runRev(config.revJs);
@@ -73,10 +73,10 @@ exports.revReplace = revReplace;
 exports.cacheBust = gulp.series(exports.revFiles, revReplace);
 
 function browserSync () {
-    gulpHero.runBrowserSync(config.browserSync, config.appScss.dest, config.appJs.dest, config.appHtml.dest);
+    gulpHero.runBrowserSync(config.browserSync, config.appScss.dest, config.appJs.dest, config.appHtml.dest, config.staticAssets.srcGlob);
 }
 exports.browserSync = browserSync;
 
-exports.build = gulp.series(clean, gulp.parallel(exports.js, exports.css, htmlTemplates, copyIndex));
+exports.build = gulp.series(clean, gulp.parallel(exports.js, exports.css, htmlTemplates, staticAssets));
 
 exports.buildAndServe = gulp.series(exports.build, gulp.parallel(watch, browserSync));

@@ -10,6 +10,8 @@ module.exports = function() {
     return {
         appRoot,
         destinationBaseDir,
+        cssDestination,
+        jsDestination,
         vendorScss: {
             autoprefix: false,
             dest: `${destinationBaseDir}/css/vendor.min.css`,
@@ -37,22 +39,36 @@ module.exports = function() {
             concatOnly: false,
             dest: `${jsDestination}/app.min.js`,
             srcGlob: [
-                `${appRoot}/main.js`,
+                `${appRoot}/app.module.js`,
+                `${appRoot}/**/*.module.js`,
                 `${appRoot}/**/*.js`
             ]
         },
         appHtml: {
             moduleName: 'templates',
-            templateRoot: '/app/',
+            templateRoot: `/${appRoot}/`,
             dest: `${jsDestination}/app-templates.min.js`,
             srcGlob:[
                 `${appRoot}/**/*.template.html`                
             ]
         },
 
+        staticAssets: {
+            base: appRoot,
+            dest: destinationBaseDir + '',
+            srcGlob:[
+                `${appRoot}/index.html`,
+                `${appRoot}/fonts/**/*`,
+                `${appRoot}/images/**/*`
+            ]
+        },
+
         browserSync: {
             port: 4004,
+            //NOTE: Use the 'appRoot' setting if you want BrowserSync to servce your app.
+            //      Use 'proxy' if your app is hosted by ASP.NET or something similar.
             appRoot: 'www'
+            //proxy: 'http://localhost:61653'        
         },
 
         revJs: {

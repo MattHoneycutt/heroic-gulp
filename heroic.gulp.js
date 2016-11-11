@@ -23,7 +23,8 @@ module.exports = function() {
         runAngularTemplateCacheFor,
         runRev,
         runRevReplace,
-        watchFailed
+        watchFailed,
+        copyStaticAssets
     };
 
     return gulpHero;
@@ -49,11 +50,16 @@ module.exports = function() {
                 .pipe(gulp.dest('.'));
     }
 
-    function runBrowserSync(config, cssFileToMonitor, jsFileToMonitor, htmlTemplateFileToMonitor) {
-        bs.init({
-            port: config.port,
-            server: config.appRoot
-        });
+    function runBrowserSync(config, cssFileToMonitor, jsFileToMonitor, htmlTemplateFileToMonitor, staticAssetsToMonitor) {
+        let bsConfig = {
+            port: config.port
+        };
+
+        if (config.appRoot) config.server = config.appRoot;
+
+        if (config.proxy) config.proxy = config.proxy;
+
+        bs.init(bsConfig);
 
         bs.watch(cssFileToMonitor)
             .on('change', () => {
@@ -71,6 +77,12 @@ module.exports = function() {
             .on('change', () => {
                 bs.reload('*.html');
                 bs.notify('HTML changed!');
+            });
+
+        bs.watch(staticAssetsToMonitor)
+            .on('change', () => {
+                bs.notify('Static files changed!');
+                setTimeout(() => bs.reload(), 1000);
             });
     }
 
@@ -111,6 +123,11 @@ module.exports = function() {
                 .pipe(revReplace({manifest:cssManifest}))
                 .pipe(revReplace({manifest:jsManifest}))
                 .pipe(gulp.dest(target.substring(0, target.lastIndexOf("/"))));
+    }
+
+    function copyStaticAssets(config) {
+        return gulp.src(config.srcGlob, {"base": config.base})
+            .pipe(gulp.dest(config.dest));
     }
 
 };

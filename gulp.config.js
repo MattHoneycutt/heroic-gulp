@@ -1,4 +1,4 @@
-var module = module || {};
+const module = module || {};
 module.exports = function() {
     const destinationBaseDir = 'www';
     const modulesRoot = 'node_modules';

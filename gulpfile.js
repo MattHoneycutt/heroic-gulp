@@ -1,8 +1,8 @@
 'use strict';
-let gulp = require('gulp');
-let del = require('del');
-let gulpHero = require('./heroic.gulp.js')();
-let config = require('./gulp.config.js')();
+const gulp = require('gulp');
+const del = require('del');
+const gulpHero = require('./heroic.gulp.js')();
+const config = require('./gulp.config.js')();
 
 function clean() {
     return del(config.destinationBaseDir + '**/*');

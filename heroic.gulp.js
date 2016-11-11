@@ -1,20 +1,20 @@
 'use strict';
-let gulp = require('gulp');
-let sass = require('gulp-sass');
-let concat = require('gulp-concat');
-let sourcemaps = require('gulp-sourcemaps');
-let gulpif = require('gulp-if');
-let autoprefixer = require('gulp-autoprefixer');
-let babel = require('gulp-babel');
-let uglify = require('gulp-uglify');
-let ngAnnotate = require('gulp-ng-annotate');
-let bs = require('browser-sync').create();
-let htmlmin = require('gulp-htmlmin');
-let angularTemplatecache = require('gulp-angular-templatecache');
-let rev = require('gulp-rev');
-let revReplace = require('gulp-rev-replace');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const gulpif = require('gulp-if');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const ngAnnotate = require('gulp-ng-annotate');
+const bs = require('browser-sync').create();
+const htmlmin = require('gulp-htmlmin');
+const angularTemplatecache = require('gulp-angular-templatecache');
+const rev = require('gulp-rev');
+const revReplace = require('gulp-rev-replace');
 
-var module = module || {};
+const module = module || {};
 module.exports = function() {
     var gulpHero = {
         runScssFor,

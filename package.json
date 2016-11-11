@@ -4,7 +4,7 @@
   "bugs": {
     "url": "https://github.com/MattHoneycutt/heroic-gulp/issues"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple, reusable approach to managing HTML, JS, and CSS with gulp.",
   "main": "main.js",
   "scripts": {
@@ -20,7 +20,6 @@
     "type": "git",
     "url": "https://github.com/MattHoneycutt/heroic-gulp.git"
   },
-
   "dependencies": {
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.17.5",

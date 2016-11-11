@@ -4,7 +4,7 @@
   "bugs": {
     "url": "https://github.com/MattHoneycutt/heroic-gulp/issues"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple, reusable approach to managing HTML, JS, and CSS with gulp.",
   "main": "main.js",
   "scripts": {

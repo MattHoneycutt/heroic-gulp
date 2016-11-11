@@ -1,7 +1,7 @@
 'use strict';
 const gulp = require('gulp');
 const del = require('del');
-const gulpHero = require('./heroic.gulp.js')();
+const gulpHero = require('./node_modules/heroic-gulp/heroic.gulp.js')();
 const config = require('./gulp.config.js')();
 
 function clean() {

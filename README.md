@@ -23,7 +23,7 @@ I envision the final version of this to go something like this:
 1. Create a new project (duh)
 2. npm i heroic-gulp --save-dev
 3. Customize gulp.config.js if needed (hopefully this would involve just adding additional script and scss refs)
-4. Do good things: gulp buildAndServe watch
+4. Do good things: gulp buildAndServe
 
 I'm putting this out there to get feedback, and to see if there are ways I could do this better. 
 

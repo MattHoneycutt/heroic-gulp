@@ -17,32 +17,36 @@ module.exports = function() {
             autoprefix: false,
             dest: `${destinationBaseDir}/css/vendor.min.css`,
             srcGlob: [
-                `vendor/main.scss`
+                //Samples:
+                // `vendor/main.scss`,
+                // `${modulesRoot}/some/other/package.scss`
             ]
         },
         appScss: {
             autoprefix: true,
             dest: `${destinationBaseDir}/css/app.min.css`,
             srcGlob: [
-                `${appRoot}/layout.scss`,
-                `${appRoot}/**/*.scss`
+                //Samples:
+                // `${appRoot}/layout.scss`,
+                // `${appRoot}/**/*.scss`
             ]
         },
         vendorJs: {
             concatOnly: true,
             dest: `${jsDestination}/vendor.min.js`,
             srcGlob: [
-                `${modulesRoot}/lodash/lodash.min.js`,
-                `${modulesRoot}/angular/angular.min.js`
+                //Samples:
+                // `${modulesRoot}/angular/angular.min.js`
             ]
         },
         appJs: {
             concatOnly: false,
             dest: `${jsDestination}/app.min.js`,
             srcGlob: [
-                `${appRoot}/app.module.js`,
-                `${appRoot}/**/*.module.js`,
-                `${appRoot}/**/*.js`
+                //Samples:
+                // `${appRoot}/app.module.js`,
+                // `${appRoot}/**/*.module.js`,
+                // `${appRoot}/**/*.js`
             ]
         },
         appHtml: {
@@ -50,7 +54,8 @@ module.exports = function() {
             templateRoot: `/${appRoot}/`,
             dest: `${jsDestination}/app-templates.min.js`,
             srcGlob:[
-                `${appRoot}/**/*.template.html`                
+                //Samples:
+                // `${appRoot}/**/*.template.html`                
             ]
         },
 
@@ -58,9 +63,10 @@ module.exports = function() {
             base: appRoot,
             dest: destinationBaseDir + '',
             srcGlob:[
-                `${appRoot}/index.html`,
-                `${appRoot}/fonts/**/*`,
-                `${appRoot}/images/**/*`
+                //Samples:
+                // `${appRoot}/index.html`,
+                // `${appRoot}/fonts/**/*`,
+                // `${appRoot}/images/**/*`
             ]
         },
 
